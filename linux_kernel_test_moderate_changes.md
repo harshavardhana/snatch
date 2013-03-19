@@ -1,6 +1,7 @@
 
-### Linux kernel rdiffdir test - high changes
+## Linux kernel rdiffdir test - high changes
 
+```
 # find linux-3.0.69 -type f | wc -l
 36791
 
@@ -35,7 +36,9 @@ sys     0m1.891s
 real    0m22.994s
 user    0m15.468s
 sys     0m5.847s
-
-## After
-du -s linux-3.0.69
+```
+## Final result
+```
+# du -s linux-3.0.69
 567820  linux-3.0.69
+```

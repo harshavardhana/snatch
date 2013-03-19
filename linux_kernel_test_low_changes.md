@@ -1,11 +1,12 @@
-# Linux kernel rdiffdir test - low changes
+## Linux kernel rdiffdir test - low changes
 
+```
 # Total files
-# find . -type f | wc -l
+# find linux-3.8 -type f | wc -l
 41520
 
 # Total directories
-# find . -type d | wc -l
+# find linux-3.8 -type d | wc -l
 2690
 
 # Total size
@@ -39,7 +40,9 @@ real    0m22.335s
 user    0m14.813s
 sys     0m5.912s
 
-# After patching
+```
+## Final result
+```
 # du -s linux-3.8
 567804  linux-3.8
-
+```

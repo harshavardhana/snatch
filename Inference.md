@@ -1,4 +1,4 @@
-rdiffdir -
+## Rdiffdir - Inference
 
 Changes associated with ascii files and text - from relatively low to moderate
 changes - patch apply time distribution is lower as the files and directories
@@ -27,7 +27,8 @@ would have caused a marginal increase in their size consumption on disk.
 Since rdiffdir is using 'rsync' algorithm internally it is safe to assume that
 things are consistent :-)
 
--Harsha
+--
+Harsha
 
 
 

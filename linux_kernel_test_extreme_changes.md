@@ -1,6 +1,7 @@
 
-## Linux kernel rdiffdir test -  very very high changes
+## Linux kernel rdiffdir test - extreme changes
 
+```
 # find linux-3.8.3 -type d | wc -l
 2690
 # find linux-3.8.3 -type f | wc -l
@@ -37,8 +38,10 @@ sys     0m12.279s
 real    2m13.907s
 user    0m34.879s
 sys     0m15.967s
+```
 
-## After
-
+## Final result
+```
 # du -s linux-3.8.3
 6038628 linux-3.8.3
+```
