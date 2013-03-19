@@ -1,4 +1,4 @@
-## Rdiffdir
+## rdiffdir
 
 Changes associated with ascii files and text - from relatively low to moderate
 changes - patch apply time distribution is lower as the files and directories
@@ -16,7 +16,7 @@ Even the relative 'delta' files gets bigger and bigger closing to the size of th
 But another thing to notice is that the individual bytes are slightly higher for
 the old directory after the patch procedure when the size of `delta` file
  
-    size(delta_file) > size(old_directory_sig) 
+    size(delta_file) > size(old_directory_sig)
           - Usually this is the data point to look for
 
 Now its hard to indicate if data is inconsistent for those individual bytes,
