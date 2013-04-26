@@ -1,3 +1,4 @@
+```
 # find . -type f | wc -l
 36791
 # find . -type d | wc -l
@@ -76,3 +77,4 @@ Total 69398 (delta 24285), reused 69398 (delta 24285)
 
 Enable gc on all repo's by default
 # git config --global gc.auto 1
+```
