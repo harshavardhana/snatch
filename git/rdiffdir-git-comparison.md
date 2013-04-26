@@ -1,3 +1,4 @@
+```
 # du -s linux-3.8.3-3.0.69.delta 
 268472  linux-3.8.3-3.0.69.delta
 # du -sh linux-3.8.3-3.0.69.delta 
@@ -29,9 +30,11 @@ real    1m11.902s
 user    1m23.321s
 sys     0m9.019s
 
+```
 (In case of git 'git gc' here would have taken some time)
 re-running the same scenario with a 'pre' 'git gc' executed earlier
 
+```
 # du -s linux-3.0.69
 620100  linux-3.0.69
 
@@ -48,8 +51,10 @@ HEAD is now at 0ab2ede First commit
 real    0m33.453s
 user    0m4.633s
 sys     0m1.359s
+```
 
 -- Doing this traditional 'patch' and 'git add' way.
+```
 # time patch -p1 < 0001-Second-commit.patch 2>&1 > /dev/null
 
 real    0m8.511s
@@ -69,3 +74,4 @@ Patch generated after applying patch from 'rsync from 3.8.3 --> 3.0.69'
 Patch generated after rsync from 3.8.3 --> 3.0.69
 # du -s ../0001-Second-commit.patch
 251972  ../0001-Second-commit.patch
+```
