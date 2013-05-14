@@ -49,8 +49,8 @@ sys     0m11.032s
 ==============================
 
 (Clojure md5 10k files)
-```
 ==============================
+```
 Un-cached
 
 user=> (time (doseq [l (pmap #(md5file %) (walk-dir2 "/home/testdir"))]))
