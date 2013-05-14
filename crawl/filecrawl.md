@@ -1,14 +1,17 @@
 
 5 levels of sub-directory
 
+```
 # find . -type d | wc -l 
 50001
 
 # find . -type f | wc -l
 10000
+```
 
 (File crawling)
 ==============================
+```
 Un-cached
 # time ls -lR > /dev/null
 
@@ -22,10 +25,12 @@ Cached
 real    0m1.129s
 user    0m0.360s
 sys     0m0.761s
+```
 ==============================
 
 (File md5sum 10k)
 ==============================
+```
 Un-cached
 #  time find . -type f -exec md5sum {} > /dev/null \;
 
@@ -40,9 +45,11 @@ Cached
 real    0m14.291s
 user    0m2.341s
 sys     0m11.032s
+```
 ==============================
 
 (Clojure md5 10k files)
+```
 ==============================
 Un-cached
 
@@ -59,11 +66,12 @@ nil
 user=>
 
 i.e 25.085s
+```
 ==============================
 
 (Golang Filewalk)
-
 ==============================
+```
 Un-cached
 
 # time go run filewalk.go /home/testdir
@@ -79,4 +87,5 @@ Cached
 real    0m55.559s
 user    0m54.534s
 sys     0m2.775s
+```
 ==============================
