@@ -1,9 +1,8 @@
-
-5 levels of sub-directory
+5 levels of sub-directory, 10k directories and 10kfiles
 
 ```
-# find . -type d | wc -l 
-50001
+# find . -type d | wc -l
+50000
 
 # find . -type f | wc -l
 10000
@@ -90,7 +89,7 @@ Equivalent to `find <dir> -type d`
 ```
 Un-cached
 
-# time go run Dirwalk.go /home/testdir 
+# time go run Dirwalk.go /home/testdir
 
 real    1m47.398s
 user    1m21.357s
@@ -121,10 +120,9 @@ sys     0m9.208s
 
 Cached
 
-# time go run calculate-md5.go  /home/testdir/ > /dev/null
+# time go run FileWalk.go  /home/testdir/ > /dev/null
 
 real    0m2.745s
 user    0m2.222s
 sys     0m0.581s
 ==============================
-
