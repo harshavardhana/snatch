@@ -48,7 +48,7 @@ sys     0m11.032s
 ```
 ==============================
 
-(Clojure md5 10k files)
+(Clojure md5 10k files --> bufsize 64kbytes)
 ==============================
 ```
 Un-cached
@@ -65,16 +65,32 @@ user=> (time (doseq [l (pmap #(md5file %) (walk-dir2 "/home/testdir"))]))
 nil
 user=>
 
-i.e 25.085s
 ```
-==============================
 
-(Golang Filewalk)
+(Clojure md5 10k files --> bufsize 64bytes)
 ==============================
 ```
 Un-cached
+user=> (time (doseq [l (pmap #(md5file %) (walk-dir2 "/home/testdir/"))]))
+"Elapsed time: 145616.071683 msecs"
 
-# time go run filewalk.go /home/testdir
+i.e 2m 25.616s
+
+Cached
+user=> (time (doseq [l (pmap #(md5file %) (walk-dir2 "/home/testdir/"))]))
+"Elapsed time: 2859.372143 msecs"
+
+```
+==============================
+
+(Golang Dirwalk)
+==============================
+Equivalent to `find <dir> -type d`
+
+```
+Un-cached
+
+# time go run Dirwalk.go /home/testdir 
 
 real    1m47.398s
 user    1m21.357s
@@ -82,10 +98,33 @@ sys     0m18.066s
 
 Cached
 
-# time go run filewalk.go /home/testdir
+# time go run Dirwalk.go /home/testdir
 
 real    0m55.559s
 user    0m54.534s
 sys     0m2.775s
 ```
 ==============================
+
+(Golang Filewalk)
+==============================
+Equivalent to `find <dir> -type f`
+
+```
+Un-Cached
+
+# time go run FileWalk.go  /home/testdir/
+
+real    0m25.882s
+user    0m5.478s
+sys     0m9.208s
+
+Cached
+
+# time go run calculate-md5.go  /home/testdir/ > /dev/null
+
+real    0m2.745s
+user    0m2.222s
+sys     0m0.581s
+==============================
+
